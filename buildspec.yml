@@ -29,7 +29,7 @@ phases:
       - terraform --version
       #- terraform init -input=false --backend-config=dev.conf
       - terraform init -input=false
-      - terraform validate -input=false
+      - terraform validate 
       #- terraform plan -lock=false -input=false -var-file=dev.tfvars           
       - terraform plan
       #- terraform $TF_COMMAND -input=false -var-file=dev.tfvars -auto-approve  
