@@ -16,13 +16,13 @@ phases:
       - wget https://releases.hashicorp.com/terraform/"$TERRAFORM_VERSION"/terraform_"$TERRAFORM_VERSION"_linux_amd64.zip
       - unzip terraform_"$TERRAFORM_VERSION"_linux_amd64.zip
       - mv terraform /usr/local/bin/
-  pre-build:
+  pre_build:
     on-failure: ABORT
     commands:
       - echo terraform execution started on `date`
   build:
     on-failure: ABORT
-  post-build:
+  post_build:
     on-failure: CONTINUE
     commands:
     - echo terraform execution completed on `date`
