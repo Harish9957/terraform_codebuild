@@ -23,3 +23,6 @@ phases:
   build:
     on-failure: ABORT
   post-build:
+    on-failure: CONTINUE
+    commands:
+    - echo terraform execution completed on `date`
