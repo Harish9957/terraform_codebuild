@@ -3,6 +3,7 @@ env:
   variables:
     TERRAFORM_VERSION: "1.5.4"
     #TF_COMMAND: "apply"
+    #destroy the resources
     TF_COMMAND: "destroy"
   parameter-store:
     AWS_ACCESS_KEY_ID: "/CodeBuild/MY_AWS_ACCESS_KEY_ID"
