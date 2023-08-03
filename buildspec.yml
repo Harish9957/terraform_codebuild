@@ -28,7 +28,8 @@ phases:
       - ls -lrt "$CODEBUILD_SRC_DIR/terraform-manifests"
       - terraform --version
       #- terraform init -input=false --backend-config=dev.conf
-      - terraform validate
+      - terraform init -input=false
+      - terraform validate -input=false
       #- terraform plan -lock=false -input=false -var-file=dev.tfvars           
       - terraform plan
       #- terraform $TF_COMMAND -input=false -var-file=dev.tfvars -auto-approve  
