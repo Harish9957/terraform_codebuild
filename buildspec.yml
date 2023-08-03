@@ -1,0 +1,25 @@
+version: 0.2
+env:
+  variables:
+    TERRAFORM_VERSION: "1.5.4"
+    TF_COMMAND: "apply"
+  parameter-store:
+    AWS_ACCESS_KEY_ID: "/CodeBuild/MY_AWS_ACCESS_KEY_ID"
+    AWS_SECRET_ACCESS_KEY: "/CodeBuild/MY_SECRET_ACCESS_KEY"
+phases:
+  install:
+    runtime-versions:
+      python: 3.9.16
+    on-failure: ABORT
+    commands:
+      - tf_version=$TERRAFORM_VERSION
+      - wget https://releases.hashicorp.com/terraform/"$TERRAFORM_VERSION"/terraform_"$TERRAFORM_VERSION"_linux_amd64.zip
+      - unzip terraform_"$TERRAFORM_VERSION"_linux_amd64.zip
+      - mv terraform /usr/local/bin/
+  pre-build:
+    on-failure: ABORT
+    commands:
+      - echo terraform execution started on `date`
+  build:
+    on-failure: ABORT
+  post-build:
