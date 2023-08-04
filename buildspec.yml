@@ -1,6 +1,7 @@
 version: 0.2
 env:
   variables:
+    #latest terraform version
     TERRAFORM_VERSION: "1.5.4"
     TF_COMMAND: "apply"
     #destroy the resources
