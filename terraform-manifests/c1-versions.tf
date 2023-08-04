@@ -16,6 +16,15 @@ terraform {
             version = "> 2.6.0"
         }
     }
+
+     # Adding Backend as S3 for Remote State Storage
+    backend "s3" {
+        bucket = "aws-codebuild-ec2"
+        key    = "iacdevops/dev/terraform.tfstate"
+        region = "us-east-2" 
+        dynamodb_table = "iacdevops-dev-tf"
+
+    }  
 }
 
 #Provider Block
@@ -25,3 +34,5 @@ provider "aws" {
     #shared_credentials_files = ["~/.aws/credentials"]
     #profile = "default"
 }
+
+     
