@@ -22,7 +22,8 @@ terraform {
         bucket = "iac-terraform-on-aws-for-ec2"
         key    = "iacdevops/dev/terraform.tfstate"
         region = "us-east-2" 
-        dynamodb_table = "iacdevops-dev-tfstate"
+        #dynamodb_table = "iacdevops-dev-tfstate"
+        dynamodb_table = "iacdevops-dev-tf"
 
     }  
 }
