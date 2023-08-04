@@ -2,5 +2,5 @@
 variable "vpc_name" { 
     description = "VPC Name"
     type = string
-    default = "vpc_ohio"
+    default = "ohio_vpc"
 }
