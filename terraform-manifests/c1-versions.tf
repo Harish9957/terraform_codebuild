@@ -19,10 +19,10 @@ terraform {
 
      # Adding Backend as S3 for Remote State Storage
     backend "s3" {
-        bucket = "aws-codebuild-for-ec2"
-        key    = "iacdevops/terraform.tfstate"
+        bucket = "terraform-on-aws-for-ec2"
+        key    = "iacdevops/dev/terraform.tfstate"
         region = "us-east-2" 
-        dynamodb_table = "iacdevops-dev-tf"
+        dynamodb_table = "iacdevops-dev-tfstate"
 
     }  
 }
