@@ -19,19 +19,19 @@ module "eks" {
    }
 
    eks_managed_node_groups = {
-    general = {
+    #general = {
     min_size = 1
     desired_size = 1
     max_size = 2
 
-    labels = {
-        role = "general"        
-    }
+    #labels = {
+       # role = "general"        
+    #}
     instance_types = ["t3.micro"]
     capacity_type  = "ON_DEMAND"
-   }   
-    tags = {
-    Environment = "staging"
-  }
+   #}   
+    #tags = {
+    #Environment = "staging"
+  #}
 }
 }
