@@ -34,7 +34,7 @@ phases:
       - terraform init -input=false
       - terraform validate 
       #- terraform plan -lock=false -input=false -var-file=dev.tfvars           
-      - terraform plan
+      - terraform plan -lock=false
       #- terraform $TF_COMMAND -input=false -var-file=dev.tfvars -auto-approve  
       - terraform $TF_COMMAND -input=false -auto-approve
   post_build:
